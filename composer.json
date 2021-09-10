@@ -1,0 +1,19 @@
+{
+    "name": "dadyday/xparse",
+    "description": "Helper to parse html data into a struct",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Xparse\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "dadyday",
+            "email": "github.com@holgerheyne.de"
+        }
+    ],
+    "require-dev": {
+        "tracy/tracy": "^2.8"
+    }
+}
