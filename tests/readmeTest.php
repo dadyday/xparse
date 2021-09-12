@@ -1,20 +1,9 @@
-# Xparse
-
-A small lib, to parse XML or HTML details with XPath expressions into a PHP array structure.
-
-## Installation
-
-```sh
-$ composer require dadyday/xparse
-```
-
-## Usage
-
-We create the scheme first (maybe in a DI container), and parse the document within our business logic.
-
-```php
 <?php
+require_once __DIR__.'/cfg.php';
+
+use Tester\Assert as Is;
 use Xparse\Parser;
+use Xparse\Value;
 
 $xml = 
 '<?xml version="1.0"?>
@@ -51,7 +40,8 @@ $oValue = Value::map('//el',
 );
 $oParser = new Parser($oValue);
 $aList = $oParser->parseXml($xml);
-$aList == [ // map for every el
+dump($aList);
+Is::equal($aList, [ // map for every el
     // key is first i-content as integer
     1 => [ // struct for first el
         'attr' => 'an attrib found', // attr of first el 
@@ -73,5 +63,5 @@ $aList == [ // map for every el
         'next' => false, // no el behind
         'prev' => ['a', 'b'], // two el's before
     ],
-];
-```
+]);
+
