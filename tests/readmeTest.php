@@ -12,7 +12,7 @@ $xml =
         the <b>important</b> and <i>1st</i> content
     </el>
     <el id="b">
-        <b>2nd</b> content
+        <b>2.</b> content
     </el>
     <el id="c" attr="another attrib">
         3rd content
@@ -52,7 +52,7 @@ Is::equal($aList, [ // map for every el
     // key from b-content
     2 => [ // secound el
         'attr' => 'not found', // there is no attrib
-        'text' => '2nd content', 
+        'text' => '2. content', 
         'next' => true,
         'prev' => ['a'], // one el before
     ],

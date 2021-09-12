@@ -9,6 +9,6 @@ class ValueInt extends ValueNum {
 
 	function result(Parser $oParser, \DOMNodeList $oNodes = null) {
 		$value = parent::result($oParser, $oNodes);
-		return is_null($value) ? null : round($value);
+		return is_null($value) ? null : (int) round($value);
 	}
 }
